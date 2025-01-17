@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-      Homepage
+     <h1  class="text-sky-400">Homepage</h1> 
     </>
   )
 }
