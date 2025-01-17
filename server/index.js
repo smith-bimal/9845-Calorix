@@ -16,6 +16,7 @@ connectDB();
 app.use(cors());
 app.use(bodyParser.json());
 
+
 // Placeholder route for testing
 app.get('/', (req, res) => {
     res.send('QR Food Calorie Backend is running!');
