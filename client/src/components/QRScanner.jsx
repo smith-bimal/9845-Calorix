@@ -9,8 +9,7 @@ function QRScanner() {
 
     useEffect(() => {
         console.log(data);
-        if (data != '') navigate("/dishes");
-        // navigate(data);
+        navigate(data);
     }, [data]);
 
     return (
