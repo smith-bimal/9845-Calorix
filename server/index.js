@@ -6,7 +6,8 @@ const connectDB = require('./config/db');
 
 const dishRouter = require("./routers/dish.route");
 const itemRouter = require("./routers/item.route");
-
+const userRouter = require("./routers/user.route");
+const authRouter = require("./routers/auth.route");
 dotenv.config(); // Load environment variables
 console.log(process.env.PORT);
 const app = express();
@@ -16,13 +17,21 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    optionsSuccessStatus: 204
+}));
+
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/api/dishes", dishRouter);
-app.use("/api/items", itemRouter);
+app.use("/api/dishes/", dishRouter);
+app.use("/api/items/", itemRouter);
+app.use("/api/user/", userRouter);
+app.use("/api/auth/", authRouter);
 
 // Placeholder route for testing
 app.get('/', (req, res) => {
