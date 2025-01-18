@@ -1,9 +1,11 @@
-
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import background from "../assets/background.png";
+import idli from "../assets/idli vada 1.png";
+import ProductDetails from "./ProductDetailsPage";
 
 const ProductPage = () => {
+
   return (
     <div className="min-h-screen">
       {/* Background Image */}
@@ -13,9 +15,12 @@ const ProductPage = () => {
           backgroundImage: `url(${background})`,
         }}
       />
-      
+
       {/* Navbar Component */}
       <Navbar />
+      {/* main Component */}
+
+      <ProductDetails/>
     </div>
   );
 };
