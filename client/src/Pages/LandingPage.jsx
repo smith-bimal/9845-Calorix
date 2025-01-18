@@ -1,11 +1,29 @@
 import { Search } from "lucide-react"
 import PrimaryBtn from "../components/PrimaryBtn"
 import QRScanner from "../components/QRScanner"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import apiRequest from "../lib/apiRequest"
+import DropDownCards from "../components/DropDownCards"
 
 const LandingPage = () => {
   const [isScanning, setIsScanning] = useState(false);
+  const [inputData, setInputData] = useState("");
+  const [dishes, setDishes] = useState([]);
+  const [filteredDishes, setFilteredDishes] = useState([]);
 
+  useEffect(() => {
+    apiRequest.get('/dishes')
+      .then(res => {
+        setDishes(res.data.dishes);
+      })
+  }, [])
+
+  useEffect(() => {
+    const temp = dishes.filter((el) =>
+      el.name.toLowerCase().includes(inputData.toLowerCase())
+    );
+    setFilteredDishes(temp);
+  }, [inputData, dishes]);
 
   return (
     <div className="p-6 sm:p-12 sm:h-screen">
@@ -18,8 +36,16 @@ const LandingPage = () => {
         <div className="flex flex-col items-center justify-center gap-6">
           <div className="relative">
             <div className="absolute right-8 top-1/2 -translate-y-1/2"><Search /></div>
-            <input type="text" placeholder="Search for the dish or item" className="rounded-full px-8 py-5 sm:min-w-[25rem] w-[500px] shadow-[0_4px_4px_0_#0000001f,_inset_1px_0_4px_rgba(0,0,0,0.11)] outline-none" />
+            <input type="text"
+              placeholder="Search for the dish or item"
+              className="rounded-full px-8 py-5 sm:min-w-[25rem] w-[500px] shadow-[0_4px_4px_0_#0000001f,_inset_1px_0_4px_rgba(0,0,0,0.11)] outline-none"
+              value={inputData}
+              onChange={(e) => setInputData(e.target.value)}
+            />
+
+            {filteredDishes.length > 0 && inputData != "" && <DropDownCards data={filteredDishes} />}
           </div>
+
           <div className="flex items-center justify-around w-2/3 mx-auto">
             <div className="border flex-grow"></div>
             <p className="text-neutral-500 text-sm px-5">Or</p>
