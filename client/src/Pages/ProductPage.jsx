@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LoginCard from '../components/LoginCard';
 import RegisterCard from '../components/RegisterCard';
 import background from '../assets/background.png';
@@ -21,13 +20,13 @@ const ProductPage = () => {
   return (
     <div className="min-h-screen">
       {/* Background Image */}
-      <div 
+      <div
         className="fixed inset-0 w-full h-full bg-cover bg-center -z-10"
         style={{
           backgroundImage: `url(${background})`,
         }}
       />
-      
+
       {/* Navbar */}
       <nav className="relative bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +34,7 @@ const ProductPage = () => {
             <div className="flex-shrink-0">
               <span className="text-2xl font-bold text-white">Logo</span>
             </div>
-            
+
             <div className="flex space-x-4">
               <button
                 onClick={() => setShowLoginModal(true)}
@@ -54,15 +53,15 @@ const ProductPage = () => {
         </div>
       </nav>
 
-     
+
       {showLoginModal && (
-        <LoginCard 
-          onClose={() => setShowLoginModal(false)} 
+        <LoginCard
+          onClose={() => setShowLoginModal(false)}
           switchToRegister={switchToRegister}
         />
       )}
       {showRegisterModal && (
-        <RegisterCard 
+        <RegisterCard
           onClose={() => setShowRegisterModal(false)}
           switchToLogin={switchToLogin}
         />
