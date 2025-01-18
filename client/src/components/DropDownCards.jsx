@@ -4,10 +4,8 @@ import { CircleArrowRight } from "lucide-react";
 
 /* eslint-disable react/prop-types */
 const DropDownCards = ({ data }) => {
-
     const navigate = useNavigate();
 
-    console.log(data);
     return (
         <div className="absolute p-8 rounded-3xl bg-white max-h-[500px] w-full mt-8 z-20 shadow-[0_4px_4px_0_#0000001f,_inset_1px_0_4px_rgba(0,0,0,0.11)] overflow-auto">
             {data.map((dish) =>
@@ -21,4 +19,4 @@ const DropDownCards = ({ data }) => {
     )
 }
 
-export default DropDownCards
+export default DropDownCards;
