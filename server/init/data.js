@@ -233,7 +233,7 @@ const dishes = [
             { name: "Pesarattu", quantity: 2, calories: 200 },
             { name: "Sambhar", quantity: 1, calories: 100 },
             { name: "Chutney", quantity: 1, calories: 50 }
-        ]
+        ],
     },
     {
         name: "Dhokla",
@@ -261,13 +261,6 @@ const dishes = [
         items: [
             { name: "Kachori", quantity: 2, calories: 250 },
             { name: "Aloo Sabzi", quantity: 1, calories: 150 }
-        ]
-    },
-    {
-        name: "Pav Bhaji",
-        items: [
-            { name: "Bhaji", quantity: 1, calories: 300 },
-            { name: "Pav", quantity: 2, calories: 200 }
         ]
     },
     {

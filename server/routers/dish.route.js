@@ -1,8 +1,8 @@
 const express = require("express");
-const { addDish, getDish, deleteDish, updateDish } = require("../controllers/dish.controller");
+const { addDish, getDish, deleteDish, updateDish, searchDish } = require("../controllers/dish.controller");
 const router = express.Router();
 
-router.post("/", addDish);
+router.route('/').post(addDish).get(searchDish);
 
 router.route('/:id').get(getDish)
     .put(updateDish).delete(deleteDish)
