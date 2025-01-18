@@ -15,6 +15,9 @@ const dishSchema = new Schema({
             calories: Number
         }
     ],
+    description: {
+        type: String
+    }
 });
 
 const Dish = mongoose.model("Dish", dishSchema);

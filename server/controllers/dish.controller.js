@@ -26,6 +26,14 @@ const addDish = async (req, res) => {
     }
 }
 
+const searchDish = async (req, res) => {
+    try {
+        const dishes = await Dish.find({});
+        res.status(200).json({ dishes })
+    } catch (e) {
+        res.status(500).json({ message: e.message });
+    }
+}
 
 const getDish = async (req, res) => {
     try {
@@ -72,4 +80,4 @@ const deleteDish = async (req, res) => {
     }
 }
 
-module.exports = { addDish, getDish, updateDish, deleteDish };
+module.exports = { addDish, getDish, updateDish, deleteDish, searchDish };
