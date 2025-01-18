@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import { LandingPage, ProductPage, ProfilePage } from "./Pages";
+import { LandingPage, ProductPage, ProfilePage,NotFoundPage } from "./Pages";
 
 function App() {
 
@@ -9,6 +9,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/dish" element={<ProductPage />} />
         <Route path="/user" element={<ProfilePage />} />
+        <Route path="/404" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   )

@@ -32,7 +32,7 @@ const Navbar = () => {
 
             <div className="flex items-center justify-around mr-8">
               <button
-                className="p-3 hover:bg-gray-100 rounded-full mx-8"
+                className="p-3 hover:bg-gray-100 rounded-full mx-12"
                 style={{
                   boxShadow: `rgba(100, 100, 111, 0.2) 0px 7px 29px 0px`,
                 }}
