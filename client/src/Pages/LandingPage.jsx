@@ -47,7 +47,7 @@ const LandingPage = () => {
                   <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" className="opacity-35" alt="QR code" />
               }
 
-              <svg className="absolute left-0 top-1/2 duration-700 z-10" width="300" height="136" viewBox="0 0 300 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg id={`${isScanning ? "scantrail" : ""}`} className="absolute left-0 top-1/2 duration-700 z-10" width="300" height="136" viewBox="0 0 300 136" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="300" height="136" fill="url(#paint0_linear_52_69)" />
                 <defs>
                   <linearGradient id="paint0_linear_52_69" x1="150.351" y1="0" x2="150.351" y2="136" gradientUnits="userSpaceOnUse">
@@ -57,7 +57,7 @@ const LandingPage = () => {
                 </defs>
               </svg>
 
-              <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-700 z-10" width="300" height="7" viewBox="0 0 300 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg id={`${isScanning ? "scanning" : ""}`} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-700 z-10" width="300" height="7" viewBox="0 0 300 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="3.5" y1="3.5" x2="296.5" y2="3.5" stroke="url(#paint0_linear_52_67)" strokeWidth="7" strokeLinecap="round" />
                 <defs>
                   <linearGradient id="paint0_linear_52_67" x1="0" y1="7.5" x2="300" y2="7.5" gradientUnits="userSpaceOnUse">
