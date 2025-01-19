@@ -1,8 +1,9 @@
-
-import React, { useState } from "react";
-import { ScanQrCode } from "lucide-react";
+import { useState } from "react";
+import { ScanLine } from "lucide-react";
 import LoginCard from "./LoginCard";
 import RegisterCard from "./RegisterCard";
+import SecondaryBtn from "./SecondaryBtn";
+import PrimaryBtn from "./PrimaryBtn";
 
 const Navbar = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -14,57 +15,35 @@ const Navbar = () => {
   };
 
   const switchToLogin = () => {
-    setShowRegisterModal(false);
     setShowLoginModal(true);
+    setShowRegisterModal(false);
   };
 
   return (
     <>
-      <nav className="relative">
-        <div className="max-w-7xl mx-auto py-4">
-          <div className="flex justify-between items-center h-20">
-      
+      <nav>
+        <div className="mx-auto py-4">
+          <div className="flex justify-between items-center">
             <div className="flex items-center">
-              <span className="font-bold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#cf936e] to-[#674740]">
+              <span className="font-bold text-[2.5rem] text-transparent bg-clip-text bg-gradient-to-r from-[#cf936e] to-[#674740]">
                 CALORIX.
               </span>
             </div>
 
-            <div className="flex items-center justify-around mr-8">
-              <button
-                className="p-3 hover:bg-gray-100 rounded-full mx-12"
-                style={{
-                  boxShadow: `rgba(100, 100, 111, 0.2) 0px 7px 29px 0px`,
-                }}
-              >
-                <ScanQrCode size={24} />
-              </button>
-              <a href="#why" className="text-black hover:text-gray-600 mr-10">
-                Why Calorix?
-              </a>
-              <a
-                href="#about"
-                className="text-black font-medium hover:text-gray-600 mr-32"
-              >
-                About
-              </a>
-              <div className="flex items-center space-x-10">
-                <button className="px-6 py-1.5 bg-black text-[#FADA90] border border-[#FADA90] rounded-full hover:bg-gray-100">
-                  About
-                </button>
-                <button
-                  onClick={() => setShowLoginModal(true)}
-                  className="px-6 py-1.5 bg-[#FADA90] text-black rounded-full hover:bg-[#f5d4b3] transition-colors"
-                >
-                  Login
-                </button>
-              </div>
+            <div className="flex items-center justify-center gap-10">
+              <p className="font-medium hover:text-neutral-600 cursor-pointer transition-all duration-150">Why Calorix?</p>
+              <p className="font-medium hover:text-neutral-600 cursor-pointer transition-all duration-150">About</p>
+              <p className="font-medium hover:text-neutral-600 cursor-pointer transition-all duration-150"><ScanLine size={28} cursor={"pointer"} /></p>
+            </div>
+
+            <div className="flex items-center gap-6">
+              <SecondaryBtn onclick={switchToRegister}>Sign up</SecondaryBtn>
+              <PrimaryBtn onClick={switchToLogin}>Sign in</PrimaryBtn>
             </div>
           </div>
         </div>
       </nav>
 
-    
       {showLoginModal && (
         <LoginCard
           onClose={() => setShowLoginModal(false)}

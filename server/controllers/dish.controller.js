@@ -37,7 +37,7 @@ const searchDish = async (req, res) => {
 
 const getDish = async (req, res) => {
     try {
-        const dish = await Dish.findById(req.params.id);
+        const dish = await Dish.findById(req.params.id).populate("items.name");
         res.status(200).send(dish);
     } catch (e) {
         res.status(500).json({ message: e.message });

@@ -9,6 +9,15 @@ const getItems = async (req, res) => {
     }
 }
 
+const getOneItem = async (req, res) => {
+    try {
+        const item = await Item.findById(req.params.id);
+        res.status(200).json({ data: item });
+    } catch (e) {
+        res.status(500).json({ message: e.message });
+    }
+}
+
 const addItem = async (req, res) => {
     try {
         const { name, calories } = req.body;
@@ -42,4 +51,4 @@ const deleteItem = async (req, res) => {
     }
 }
 
-module.exports = { addItem, getItems, updateItem, deleteItem };
+module.exports = { addItem, getItems, updateItem, deleteItem, getOneItem };
