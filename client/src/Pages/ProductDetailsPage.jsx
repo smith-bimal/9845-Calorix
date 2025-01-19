@@ -10,11 +10,18 @@ const ProductDetails = () => {
   const [dish, setDish] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
+  const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
-    apiRequest.get(`/dishes/${id}`)
+    apiRequest
+      .get(`/dishes/${id}`)
       .then((response) => {
         setDish(response.data);
+        const initialQuantities = response.data.items.reduce((acc, item) => {
+          acc[item._id] = item.quantity || 0; // Initialize with default quantities
+          return acc;
+        }, {});
+        setQuantities(initialQuantities);
       })
       .catch((e) => {
         console.error('Error fetching dish:', e);
@@ -22,11 +29,14 @@ const ProductDetails = () => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [id]);
 
   const calculateCalories = () => {
     if (Array.isArray(dish.items)) {
-      return dish.items.reduce((sum, item) => sum + (item.calories || 0), 0);
+      return dish.items.reduce((total, item) => {
+        const quantity = quantities[item._id] || 0;
+        return total + (item.calories || 0) * quantity;
+      }, 0);
     }
     return 0;
   };
@@ -50,8 +60,13 @@ const ProductDetails = () => {
           </p>
 
           <div className="flex flex-col gap-6 max-h-[350px] overflow-auto mt-16 py-4">
-            {dish.items.map((item, index) => (
-              <Counter dish={item} key={item._id || index} />
+            {dish.items.map((item) => (
+              <Counter
+                dish={item}
+                key={item._id}
+                quantities={quantities}
+                setQuantities={setQuantities}
+              />
             ))}
           </div>
 
