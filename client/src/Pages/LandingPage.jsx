@@ -67,7 +67,7 @@ const LandingPage = () => {
               {
                 isScanning ?
                   <div className="w-[300px] h-[300px] rounded-[2rem] overflow-hidden relative">
-                    <QRScanner />
+                    <QRScanner setIsScanning={setIsScanning} />
                   </div>
                   :
                   <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" className="opacity-35" alt="QR code" />

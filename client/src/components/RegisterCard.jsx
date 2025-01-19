@@ -2,9 +2,10 @@
 import { X, Mail, Lock, User, ArrowRight, AlertCircle } from 'lucide-react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import apiRequest from '../lib/apiRequest';
 
 const RegisterSchema = Yup.object().shape({
-  fullName: Yup.string()
+  name: Yup.string()
     .min(2, 'Name must be at least 2 characters')
     .required('Full name is required'),
   email: Yup.string()
@@ -29,25 +30,29 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
       >
         <X size={24} />
       </button>
-      
+
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-neutral-900 mb-2">Create Account</h2>
         <p className="text-neutral-600">Sign up to get started</p>
       </div>
-      
+
       <Formik
         initialValues={{
-          fullName: '',
+          name: '',
           email: '',
           password: '',
           acceptTerms: false
         }}
         validationSchema={RegisterSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={(values) => {
+          apiRequest.post('/auth/register', values)
+            .then(res => {
+              console.log(res.data);
+            }).catch(e => {
+              console.log(e);
+            }).finally(() => {
+              onClose();
+            })
         }}
       >
         {({ errors, touched, isSubmitting }) => (
@@ -59,22 +64,21 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
               <div className="relative">
                 <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" size={20} />
                 <Field
-                  name="fullName"
+                  name="name"
                   type="text"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.fullName && touched.fullName ? 'border-red-500' : 'border-neutral-300'
-                  }`}
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${errors.name && touched.name ? 'border-red-500' : 'border-neutral-300'
+                    }`}
                   placeholder="Enter your full name"
                 />
               </div>
-              {errors.fullName && touched.fullName && (
+              {errors.name && touched.name && (
                 <div className="flex items-center mt-1 text-red-500 text-sm">
                   <AlertCircle size={16} className="mr-1" />
-                  {errors.fullName}
+                  {errors.name}
                 </div>
               )}
             </div>
-            
+
             <div className="relative">
               <label className="block text-sm font-medium text-neutral-700 mb-1">
                 Email
@@ -84,9 +88,8 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
                 <Field
                   name="email"
                   type="email"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.email && touched.email ? 'border-red-500' : 'border-neutral-300'
-                  }`}
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${errors.email && touched.email ? 'border-red-500' : 'border-neutral-300'
+                    }`}
                   placeholder="Enter your email"
                 />
               </div>
@@ -97,7 +100,7 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
                 </div>
               )}
             </div>
-            
+
             <div className="relative">
               <label className="block text-sm font-medium text-neutral-700 mb-1">
                 Password
@@ -107,9 +110,8 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
                 <Field
                   name="password"
                   type="password"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.password && touched.password ? 'border-red-500' : 'border-neutral-300'
-                  }`}
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${errors.password && touched.password ? 'border-red-500' : 'border-neutral-300'
+                    }`}
                   placeholder="Create a password"
                 />
               </div>
@@ -126,9 +128,8 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
                 <Field
                   type="checkbox"
                   name="acceptTerms"
-                  className={`rounded border-neutral-300 text-black focus:ring-black ${
-                    errors.acceptTerms && touched.acceptTerms ? 'border-red-500' : ''
-                  }`}
+                  className={`rounded border-neutral-300 text-black focus:ring-black ${errors.acceptTerms && touched.acceptTerms ? 'border-red-500' : ''
+                    }`}
                 />
                 <span className="ml-2 text-sm text-neutral-600">
                   I agree to the Terms of Service and Privacy Policy
@@ -141,7 +142,7 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
                 </div>
               )}
             </div>
-            
+
             <button
               type="submit"
               disabled={isSubmitting}

@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import { useNavigate } from "react-router";
 import apiRequest from "../lib/apiRequest";
 
-function QRScanner() {
+function QRScanner({ setIsScanning }) {
     const [data, setData] = useState("");
     const navigate = useNavigate();
 
@@ -12,7 +13,10 @@ function QRScanner() {
         if (data != "") {
             apiRequest.get(`dishes/${data}`)
                 .then(res => {
-                    navigate(`dishes/${res.data._id}`);
+                    setIsScanning(false);
+                    navigate(`/dishes/${res.data._id}`);
+                }).catch(e=>{
+                    console.log(e);
                 })
         }
     }, [data]);

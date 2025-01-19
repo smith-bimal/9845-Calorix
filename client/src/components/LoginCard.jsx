@@ -2,6 +2,7 @@
 import { X, Mail, Lock, ArrowRight, AlertCircle } from 'lucide-react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import apiRequest from '../lib/apiRequest';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -35,11 +36,15 @@ const LoginCard = ({ onClose, switchToRegister }) => (
           rememberMe: false
         }}
         validationSchema={LoginSchema}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={(values) => {
+          apiRequest.post("/auth/login", values)
+            .then(res => {
+              console.log(res.data);
+            }).catch(e => {
+              console.log(e);
+            }).finally(() => {
+              onClose();
+            })
         }}
       >
         {({ errors, touched, isSubmitting }) => (
@@ -52,7 +57,7 @@ const LoginCard = ({ onClose, switchToRegister }) => (
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
                 <Field
                   name="email"
-                  type="email"               
+                  type="email"
                   className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
                     }`}
 
