@@ -1,6 +1,7 @@
 const dishes = [
     {
         name: "Idli Vada Combo",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270666/Calorix_DEV/y2iuyjvfsp7io8k8bo8c.jpg",
         items: [
             { name: "Idli", quantity: 2, calories: 75 },
             { name: "Vada", quantity: 1, calories: 200 },
@@ -11,6 +12,7 @@ const dishes = [
     },
     {
         name: "Idli Sambhar",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270667/Calorix_DEV/yohnnx56r0cel1cm2it2.jpg",
         items: [
             { name: "Idli", quantity: 2, calories: 75 },
             { name: "Sambhar", quantity: 1, calories: 100 },
@@ -20,6 +22,7 @@ const dishes = [
     },
     {
         name: "Veg Thali",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270673/Calorix_DEV/w1oyj05lotknpnhn0hro.jpg",
         items: [
             { name: "Paneer Curry", quantity: 1, calories: 250 },
             { name: "Seasonal Veg Curry", quantity: 1, calories: 150 },
@@ -36,6 +39,7 @@ const dishes = [
     },
     {
         name: "Dal Rice",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270670/Calorix_DEV/d5hybcf2htrfqm8jbwlg.jpg",
         items: [
             { name: "Dal", quantity: 1, calories: 120 },
             { name: "Rice", quantity: 1, calories: 150 },
@@ -46,6 +50,7 @@ const dishes = [
     },
     {
         name: "Masala Dosa",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270669/Calorix_DEV/t46gszaf4su3aaykwfht.jpg",
         items: [
             { name: "Dosa", quantity: 1, calories: 200 },
             { name: "Sambhar", quantity: 1, calories: 100 },
@@ -55,6 +60,7 @@ const dishes = [
     },
     {
         name: "Pav Bhaji",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270670/Calorix_DEV/grqq7ifz4swyq516adxe.jpg",
         items: [
             { name: "Bhaji", quantity: 1, calories: 300 },
             { name: "Pav", quantity: 2, calories: 200 },
@@ -65,6 +71,7 @@ const dishes = [
     },
     {
         name: "Chole Bhature",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270668/Calorix_DEV/rdlbp44imvihem11guq9.jpg",
         items: [
             { name: "Chole", quantity: 1, calories: 300 },
             { name: "Bhature", quantity: 2, calories: 400 },
@@ -74,6 +81,7 @@ const dishes = [
     },
     {
         name: "Aloo Paratha",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270665/Calorix_DEV/blybn0ycinsbidsnkayz.jpg",
         items: [
             { name: "Aloo Paratha", quantity: 2, calories: 175 },
             { name: "Curd", quantity: 1, calories: 100 },
@@ -83,6 +91,7 @@ const dishes = [
     },
     {
         name: "Puri Bhaji",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270671/Calorix_DEV/gv074muhkjfal7fjnbdd.jpg",
         items: [
             { name: "Puri", quantity: 4, calories: 75 },
             { name: "Potato Curry", quantity: 1, calories: 200 },
@@ -92,6 +101,7 @@ const dishes = [
     },
     {
         name: "Rajma Chawal",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270672/Calorix_DEV/z9o6o9wswzpc4qpwqmtz.jpg",
         items: [
             { name: "Rajma", quantity: 1, calories: 250 },
             { name: "Rice", quantity: 1, calories: 150 },
@@ -101,6 +111,7 @@ const dishes = [
     },
     {
         name: "Biryani (Chicken)",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270667/Calorix_DEV/i4pp2umzfcwqpvt2jtuv.jpg",
         items: [
             { name: "Chicken Biryani", quantity: 1, calories: 500 },
             { name: "Raita", quantity: 1, calories: 80 },
@@ -110,6 +121,7 @@ const dishes = [
     },
     {
         name: "Palak Paneer with Roti",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270670/Calorix_DEV/l98ej9npptugrcjqaykr.jpg",
         items: [
             { name: "Palak Paneer", quantity: 1, calories: 250 },
             { name: "Roti", quantity: 2, calories: 100 },
@@ -119,6 +131,7 @@ const dishes = [
     },
     {
         name: "Dal Makhani with Naan",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270670/Calorix_DEV/dmuiva4xywoledrc0ifr.jpg",
         items: [
             { name: "Dal Makhani", quantity: 1, calories: 300 },
             { name: "Butter Naan", quantity: 2, calories: 200 },
@@ -128,6 +141,7 @@ const dishes = [
     },
     {
         name: "Hyderabadi Biryani",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270666/Calorix_DEV/bmqhan8eylsblcvkytur.jpg",
         items: [
             { name: "Biryani", quantity: 1, calories: 500 },
             { name: "Raita", quantity: 1, calories: 80 },
@@ -137,6 +151,7 @@ const dishes = [
     },
     {
         name: "Kadhai Paneer with Roti",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270668/Calorix_DEV/t1jdisuehvmulsnnjuks.jpg",
         items: [
             { name: "Kadhai Paneer", quantity: 1, calories: 250 },
             { name: "Roti", quantity: 2, calories: 100 },
@@ -146,6 +161,7 @@ const dishes = [
     },
     {
         name: "Chicken Tikka with Naan",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270668/Calorix_DEV/unjia3ffpkkaytpic8k9.jpg",
         items: [
             { name: "Chicken Tikka", quantity: 1, calories: 300 },
             { name: "Butter Naan", quantity: 2, calories: 200 },
@@ -155,6 +171,7 @@ const dishes = [
     },
     {
         name: "Dahi Bhalla",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270669/Calorix_DEV/isjtzblf0nmsvq3mesuo.jpg",
         items: [
             { name: "Dahi Bhalla", quantity: 2, calories: 100 },
             { name: "Sweet Chutney", quantity: 1, calories: 50 },
@@ -164,6 +181,7 @@ const dishes = [
     },
     {
         name: "Gajar Halwa",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270672/Calorix_DEV/ckknyt0hglvh8umk2ptt.jpg",
         items: [
             { name: "Gajar Halwa", quantity: 1, calories: 350 }
         ],
@@ -171,6 +189,7 @@ const dishes = [
     },
     {
         name: "Butter Chicken with Naan",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270667/Calorix_DEV/btacrent6z8jzfe7e2im.jpg",
         items: [
             { name: "Butter Chicken", quantity: 1, calories: 500 },
             { name: "Butter Naan", quantity: 2, calories: 200 },
@@ -180,6 +199,7 @@ const dishes = [
     },
     {
         name: "Samosa",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270672/Calorix_DEV/ggpspidxyqescze4aadq.jpg",
         items: [
             { name: "Samosa", quantity: 2, calories: 150 },
             { name: "Chutney", quantity: 1, calories: 50 }
@@ -188,6 +208,7 @@ const dishes = [
     },
     {
         name: "Pulao with Raita",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270671/Calorix_DEV/qrbavjmloi7lebw5jisy.jpg",
         items: [
             { name: "Vegetable Pulao", quantity: 1, calories: 350 },
             { name: "Raita", quantity: 1, calories: 80 }
@@ -196,6 +217,7 @@ const dishes = [
     },
     {
         name: "Paneer Butter Masala",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270670/Calorix_DEV/axzbbozq0cq401uus4sn.jpg",
         items: [
             { name: "Paneer Butter Masala", quantity: 1, calories: 350 },
             { name: "Butter Naan", quantity: 1, calories: 200 },
@@ -205,6 +227,7 @@ const dishes = [
     },
     {
         name: "Kadhi Pakora",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270668/Calorix_DEV/bhoqutycgjmcbd6xlxyn.jpg",
         items: [
             { name: "Kadhi", quantity: 1, calories: 180 },
             { name: "Pakora", quantity: 2, calories: 200 },
@@ -214,6 +237,7 @@ const dishes = [
     },
     {
         name: "Chana Masala",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270668/Calorix_DEV/anyt4mhoccudsid5puqu.jpg",
         items: [
             { name: "Chana Masala", quantity: 1, calories: 250 },
             { name: "Rice", quantity: 1, calories: 150 },
@@ -223,6 +247,7 @@ const dishes = [
     },
     {
         name: "Aloo Gobi",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270666/Calorix_DEV/hdoxzfwsdvolurlsbbqu.jpg",
         items: [
             { name: "Aloo Gobi", quantity: 1, calories: 200 },
             { name: "Chapati", quantity: 1, calories: 100 },
@@ -232,6 +257,7 @@ const dishes = [
     },
     {
         name: "Tandoori Roti with Dal",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270673/Calorix_DEV/ig2a6hzunedzdkuzoxhb.jpg",
         items: [
             { name: "Tandoori Roti", quantity: 2, calories: 200 },
             { name: "Dal", quantity: 1, calories: 120 }
@@ -240,6 +266,7 @@ const dishes = [
     },
     {
         name: "Vegetable Pulao",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270673/Calorix_DEV/gwy3upb2chsv1jcpo3t9.jpg",
         items: [
             { name: "Vegetable Pulao", quantity: 1, calories: 350 },
             { name: "Raita", quantity: 1, calories: 80 }
@@ -248,6 +275,7 @@ const dishes = [
     },
     {
         name: "Methi Thepla",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270669/Calorix_DEV/nbqimz8ojxb8vri6vxpf.jpg",
         items: [
             { name: "Methi Thepla", quantity: 2, calories: 200 },
             { name: "Curd", quantity: 1, calories: 100 },
@@ -257,6 +285,7 @@ const dishes = [
     },
     {
         name: "Pesarattu",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270671/Calorix_DEV/gin8nfpcwuzpxydwyn82.jpg",
         items: [
             { name: "Pesarattu", quantity: 2, calories: 200 },
             { name: "Sambhar", quantity: 1, calories: 100 },
@@ -266,6 +295,7 @@ const dishes = [
     },
     {
         name: "Dhokla",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270670/Calorix_DEV/ho6356da1m6qfhxyvzwf.jpg",
         items: [
             { name: "Dhokla", quantity: 2, calories: 150 },
             { name: "Chutney", quantity: 1, calories: 50 }
@@ -274,6 +304,7 @@ const dishes = [
     },
     {
         name: "Malai Kofta",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270669/Calorix_DEV/oquiexgbo2wxbbr7tayz.jpg",
         items: [
             { name: "Malai Kofta", quantity: 1, calories: 350 },
             { name: "Chapati", quantity: 2, calories: 200 }
@@ -282,6 +313,7 @@ const dishes = [
     },
     {
         name: "Baingan Bharta",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270667/Calorix_DEV/ey6yhq0syrftqitkqzgl.jpg",
         items: [
             { name: "Baingan Bharta", quantity: 1, calories: 200 },
             { name: "Chapati", quantity: 2, calories: 200 }
@@ -290,6 +322,7 @@ const dishes = [
     },
     {
         name: "Kachori with Aloo Sabzi",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270667/Calorix_DEV/zllwrtpdhyxemxhuospo.jpg",
         items: [
             { name: "Kachori", quantity: 2, calories: 250 },
             { name: "Aloo Sabzi", quantity: 1, calories: 150 }
@@ -298,6 +331,7 @@ const dishes = [
     },
     {
         name: "Lassi",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270668/Calorix_DEV/uuu7qgsktcgrxei2gdw0.jpg",
         items: [
             { name: "Lassi", quantity: 1, calories: 200 }
         ],
@@ -305,6 +339,7 @@ const dishes = [
     },
     {
         name: "Vada Pav",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270673/Calorix_DEV/kv9rv3k5itlt1bskxumd.jpg",
         items: [
             { name: "Vada", quantity: 1, calories: 150 },
             { name: "Pav", quantity: 1, calories: 100 }
@@ -313,6 +348,7 @@ const dishes = [
     },
     {
         name: "Tandoori Chicken",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270672/Calorix_DEV/pyjpjsd81hu2lfyrbwwz.jpg",
         items: [
             { name: "Tandoori Chicken", quantity: 1, calories: 350 },
             { name: "Naan", quantity: 2, calories: 200 }
@@ -321,6 +357,7 @@ const dishes = [
     },
     {
         name: "Sambhar Rice",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270672/Calorix_DEV/ey1twvxdtwk5mms7ao4p.jpg",
         items: [
             { name: "Sambhar", quantity: 1, calories: 100 },
             { name: "Rice", quantity: 1, calories: 150 }
@@ -329,6 +366,7 @@ const dishes = [
     },
     {
         name: "Gobi Manchurian",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270671/Calorix_DEV/ewhr5ru473c1dxzzin8l.jpg",
         items: [
             { name: "Gobi Manchurian", quantity: 1, calories: 250 },
             { name: "Rice", quantity: 1, calories: 150 }
@@ -337,6 +375,7 @@ const dishes = [
     },
     {
         name: "Chutney Sandwich",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270669/Calorix_DEV/pee7zuhhslv1x8ijhrt8.jpg",
         items: [
             { name: "Sandwich", quantity: 1, calories: 200 },
             { name: "Chutney", quantity: 1, calories: 50 }
@@ -345,6 +384,7 @@ const dishes = [
     },
     {
         name: "Puri with Aloo Curry",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270672/Calorix_DEV/njpbsjl9nul8jpt0wnj8.jpg",
         items: [
             { name: "Puri", quantity: 4, calories: 200 },
             { name: "Aloo Curry", quantity: 1, calories: 150 }
@@ -353,6 +393,7 @@ const dishes = [
     },
     {
         name: "Rava Kesari",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270672/Calorix_DEV/rkprrwlgpptwju0xaqwe.jpg",
         items: [
             { name: "Rava Kesari", quantity: 1, calories: 300 }
         ],
@@ -360,6 +401,7 @@ const dishes = [
     },
     {
         name: "Paneer Tikka",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270670/Calorix_DEV/lmh9xvazqqaymhq7luuu.jpg",
         items: [
             { name: "Paneer Tikka", quantity: 1, calories: 250 },
             { name: "Mint Chutney", quantity: 1, calories: 50 }
@@ -368,6 +410,7 @@ const dishes = [
     },
     {
         name: "Chili Paneer",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270668/Calorix_DEV/pwdhbfc125xnpllebsaw.jpg",
         items: [
             { name: "Chili Paneer", quantity: 1, calories: 350 },
             { name: "Rice", quantity: 1, calories: 150 }
@@ -376,6 +419,7 @@ const dishes = [
     },
     {
         name: "Aloo Tikki",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270666/Calorix_DEV/uvskgzi1okfurfyxrdby.jpg",
         items: [
             { name: "Aloo Tikki", quantity: 2, calories: 150 },
             { name: "Chutney", quantity: 1, calories: 50 }
@@ -384,6 +428,7 @@ const dishes = [
     },
     {
         name: "Dosa with Sambhar",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270671/Calorix_DEV/ua9nprjf4ah0jselamhg.jpg",
         items: [
             { name: "Dosa", quantity: 1, calories: 200 },
             { name: "Sambhar", quantity: 1, calories: 100 }
@@ -392,6 +437,7 @@ const dishes = [
     },
     {
         name: "Mushroom Masala",
+        image_url: "https://res.cloudinary.com/dklakrz5k/image/upload/v1737270669/Calorix_DEV/ao58orqmyr1dhprgwqwp.jpg",
         items: [
             { name: "Mushroom Masala", quantity: 1, calories: 250 },
             { name: "Rice", quantity: 1, calories: 150 }

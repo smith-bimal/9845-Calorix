@@ -49,6 +49,24 @@ const ProductDetails = () => {
     return <div className="text-center py-8">No dish details available.</div>;
   }
 
+  const handleSavePreference = () => {
+    let items = [];
+    for (let key of Object.keys(quantities)) {
+      items.push({
+        name: key,
+        quantities: quantities[key],
+      });
+    }
+
+    apiRequest.post("/user/save-dish?email=golak@mail.com", {
+      dish, items
+    }).then((res => {
+      console.log(res);
+    })).catch((e) => {
+      console.log(e);
+    })
+  }
+
   return (
     <div className="container mx-auto px-4 pt-8">
       <div className="flex items-start lg:flex-row gap-8 relative">
@@ -71,7 +89,7 @@ const ProductDetails = () => {
           </div>
 
           <div className="flex gap-4 mt-8">
-            <PrimaryBtn>Save preference</PrimaryBtn>
+            <PrimaryBtn onclick={handleSavePreference}>Save preference</PrimaryBtn>
             <TernaryBtn>Generate QR</TernaryBtn>
           </div>
         </div>
@@ -80,7 +98,7 @@ const ProductDetails = () => {
         <div className="flex-1 relative">
           <img
             src={
-              dish.image ||
+              dish.image_url ||
               "https://www.contiki.com/six-two/images/width=1180,height=710,crop=1/2024/03/IMG-20240318-WA0007-e1710844435378.jpg"
             }
             alt={dish.name || "Dish Image"}

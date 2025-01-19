@@ -48,6 +48,7 @@ async function saveDishes() {
 
             const newDish = new Dish({
                 name: dish.name,
+                image_url: dish.image_url,
                 items: updatedItems,
                 description: dish.description,
             });

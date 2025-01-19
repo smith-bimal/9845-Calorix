@@ -5,6 +5,10 @@ const dishSchema = new Schema({
         type: String,
         required: true,
     },
+    image_url: {
+        type: String,
+        required: true
+    },
     items: [
         {
             name: {
@@ -16,7 +20,8 @@ const dishSchema = new Schema({
         }
     ],
     description: {
-        type: String
+        type: String,
+        default: "No description available."
     }
 });
 

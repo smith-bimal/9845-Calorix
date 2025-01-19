@@ -8,10 +8,11 @@ const dishRouter = require("./routers/dish.route");
 const itemRouter = require("./routers/item.route");
 const userRouter = require("./routers/user.route");
 const authRouter = require("./routers/auth.route");
+
 dotenv.config(); // Load environment variables
-console.log(process.env.PORT);
+
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 // Connect to the database
 connectDB();
@@ -35,7 +36,7 @@ app.use("/api/auth/", authRouter);
 
 // Placeholder route for testing
 app.get('/', (req, res) => {
-    res.send('QR Food Calorie Backend is running!');
+    res.send('QR Food Calorie Backend!');
 });
 
 

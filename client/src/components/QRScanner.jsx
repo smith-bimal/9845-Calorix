@@ -8,7 +8,6 @@ function QRScanner() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(data);
         navigate(data);
     }, [data]);
 

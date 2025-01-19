@@ -5,8 +5,16 @@ const userSchema = new Schema({
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     preferences: [{
-        type: Schema.Types.ObjectId,
-        ref: "Dish"
+        dish: {
+            type: Schema.Types.ObjectId,
+            ref: "Dish"
+        },
+        items: [
+            {
+                name: { type: Schema.Types.ObjectId, ref: "Item" },
+                quantities: Number,
+            }
+        ]
     }],
     history: [{
         type: Schema.Types.ObjectId,

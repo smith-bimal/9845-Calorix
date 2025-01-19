@@ -4,6 +4,7 @@ const Item = require("../models/item");
 const addDish = async (req, res) => {
     try {
         const { name, items } = req.body;
+        const { path } = req.file;
         const processedItems = await Promise.all(
             items.map(async (item) => {
                 const existingItem = await Item.findOne({ name: item.name });
@@ -18,6 +19,7 @@ const addDish = async (req, res) => {
         const dish = new Dish({
             name,
             items: processedItems,
+            image_url: path,
         });
         await dish.save();
         res.status(200).json({ message: "dish added successfully." })
