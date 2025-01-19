@@ -48,7 +48,8 @@ async function saveDishes() {
 
             const newDish = new Dish({
                 name: dish.name,
-                items: updatedItems
+                items: updatedItems,
+                description: dish.description,
             });
             await newDish.save();
             console.log(`${newDish.name} Dish saved successfully.`)
