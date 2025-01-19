@@ -11,7 +11,8 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/dishes/:id" element={<ProductPage />} />
-          <Route path="/user" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+          {/* <Route path="/user" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} /> */}
+          <Route path="/user" element={<ProfilePage />} />
           <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </AuthProvider>
