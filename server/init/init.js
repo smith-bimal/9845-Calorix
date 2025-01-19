@@ -32,7 +32,7 @@ async function saveItems() {
     }
 }
 
-saveItems();
+// saveItems();
 
 async function saveDishes() {
     try {
