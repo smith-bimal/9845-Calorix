@@ -54,7 +54,7 @@ const LoginCard = ({ onClose, switchToRegister }) => (
                 <Field
                   name="email"
                   type="email"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none ${
+                  className={`w-full pl-10 pr-4 py-3 border rounded focus:ring-2 focus:ring-black focus:outline-none ${
                     errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Enter your email"

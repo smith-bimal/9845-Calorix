@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import background from "../assets/background.png";
-import idli from "../assets/idli vada 1.png";
+
 import ProductDetails from "./ProductDetailsPage";
 
 const ProductPage = () => {
