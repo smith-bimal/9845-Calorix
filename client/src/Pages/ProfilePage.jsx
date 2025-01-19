@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { MoreVertical, ScanQrCode } from "lucide-react";
 import background from "../assets/background.png";
 import idli from "../assets/idli vada 1.png";
-import { UserRound } from "lucide-react";
+import DishFormModal from "./DishFormModal";
+// import { useState } from "react";
+
+
 
 const ProfilePage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); 
   const preferredDishes = [
     { name: "Veg Thali", calories: 1170 },
     { name: "Idli Vada combo", calories: 425 },
@@ -79,13 +83,22 @@ const ProfilePage = () => {
 
               {/* Add Dishes Button */}
               <button
+        className="bg-[#FADA90] px-10 py-2 rounded-full w-full md:w-auto"
+        style={{
+          boxShadow: `rgba(100, 100, 111, 0.2) 0px 7px 29px 0px`,
+        }}
+        onClick={() => setIsModalOpen(true)} // Add this onClick handler
+      >
+        Add your dishes
+      </button>
+              {/* <button
                 className="bg-[#FADA90] px-10 py-2 rounded-full w-full md:w-auto"
                 style={{
                   boxShadow: `rgba(100, 100, 111, 0.2) 0px 7px 29px 0px`,
                 }}
               >
                 Add your dishes
-              </button>
+              </button> */}
 
               <h2 className="text-gray-500 py-4">Saved dishes</h2>
               <div className="space-y-2 w-full">
@@ -171,6 +184,10 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
+        <DishFormModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
       </main>
     </div>
   );
