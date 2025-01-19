@@ -1,5 +1,4 @@
-
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { X, Mail, Lock, User, ArrowRight, AlertCircle } from 'lucide-react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
@@ -22,18 +21,18 @@ const RegisterSchema = Yup.object().shape({
 });
 
 const RegisterCard = ({ onClose, switchToLogin }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-    <div className="bg-white rounded-lg p-8 w-[400px] relative shadow-2xl">
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white rounded-3xl p-8 w-[400px] relative shadow-2xl">
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+        className="absolute top-4 right-4 text-neutral-500 hover:text-neutral-700 transition-colors"
       >
         <X size={24} />
       </button>
       
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h2>
-        <p className="text-gray-600">Sign up to get started</p>
+        <h2 className="text-3xl font-bold text-neutral-900 mb-2">Create Account</h2>
+        <p className="text-neutral-600">Sign up to get started</p>
       </div>
       
       <Formik
@@ -54,16 +53,16 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
         {({ errors, touched, isSubmitting }) => (
           <Form className="space-y-6">
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-700 mb-1">
                 Full Name
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" size={20} />
                 <Field
                   name="fullName"
                   type="text"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.fullName && touched.fullName ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${
+                    errors.fullName && touched.fullName ? 'border-red-500' : 'border-neutral-300'
                   }`}
                   placeholder="Enter your full name"
                 />
@@ -77,16 +76,16 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
             </div>
             
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-700 mb-1">
                 Email
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" size={20} />
                 <Field
                   name="email"
                   type="email"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${
+                    errors.email && touched.email ? 'border-red-500' : 'border-neutral-300'
                   }`}
                   placeholder="Enter your email"
                 />
@@ -100,16 +99,16 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
             </div>
             
             <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-neutral-700 mb-1">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" size={20} />
                 <Field
                   name="password"
                   type="password"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.password && touched.password ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${
+                    errors.password && touched.password ? 'border-red-500' : 'border-neutral-300'
                   }`}
                   placeholder="Create a password"
                 />
@@ -127,11 +126,11 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
                 <Field
                   type="checkbox"
                   name="acceptTerms"
-                  className={`rounded border-gray-300 text-black focus:ring-black ${
+                  className={`rounded border-neutral-300 text-black focus:ring-black ${
                     errors.acceptTerms && touched.acceptTerms ? 'border-red-500' : ''
                   }`}
                 />
-                <span className="ml-2 text-sm text-gray-600">
+                <span className="ml-2 text-sm text-neutral-600">
                   I agree to the Terms of Service and Privacy Policy
                 </span>
               </label>
@@ -146,13 +145,13 @@ const RegisterCard = ({ onClose, switchToLogin }) => (
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-black text-white py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center space-x-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-black text-white py-3 px-4 rounded-full hover:bg-neutral-800 transition-colors flex items-center justify-center space-x-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span>Create Account</span>
               <ArrowRight size={20} />
             </button>
 
-            <div className="text-center text-sm text-gray-600">
+            <div className="text-center text-sm text-neutral-600">
               Already have an account?{' '}
               <button
                 type="button"

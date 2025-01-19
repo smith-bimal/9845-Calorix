@@ -1,5 +1,4 @@
-
-import React from 'react';
+/* eslint-disable react/prop-types */
 import { X, Mail, Lock, ArrowRight, AlertCircle } from 'lucide-react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
@@ -15,20 +14,20 @@ const LoginSchema = Yup.object().shape({
 });
 
 const LoginCard = ({ onClose, switchToRegister }) => (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-    <div className="bg-white rounded-lg p-8 w-[400px] relative shadow-2xl">
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="bg-white rounded-3xl p-8 w-[400px] relative shadow-2xl">
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
       >
         <X size={24} />
       </button>
-      
+
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h2>
         <p className="text-gray-600">Please enter your details to sign in</p>
       </div>
-      
+
       <Formik
         initialValues={{
           email: '',
@@ -54,9 +53,8 @@ const LoginCard = ({ onClose, switchToRegister }) => (
                 <Field
                   name="email"
                   type="email"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
-                  }`}
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${errors.email && touched.email ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   placeholder="Enter your email"
                 />
               </div>
@@ -67,7 +65,7 @@ const LoginCard = ({ onClose, switchToRegister }) => (
                 </div>
               )}
             </div>
-            
+
             <div className="relative">
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Password
@@ -77,9 +75,8 @@ const LoginCard = ({ onClose, switchToRegister }) => (
                 <Field
                   name="password"
                   type="password"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:outline-none ${
-                    errors.password && touched.password ? 'border-red-500' : 'border-gray-300'
-                  }`}
+                  className={`w-full pl-10 pr-4 py-3 border rounded-full focus:ring-2 focus:ring-black focus:outline-none ${errors.password && touched.password ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   placeholder="Enter your password"
                 />
               </div>
@@ -104,18 +101,18 @@ const LoginCard = ({ onClose, switchToRegister }) => (
                 Forgot password?
               </a>
             </div>
-            
+
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-black text-white py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center space-x-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-black text-white py-3 px-4 rounded-full hover:bg-gray-800 transition-colors flex items-center justify-center space-x-2 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <span>Sign in</span>
               <ArrowRight size={20} />
             </button>
 
             <div className="text-center text-sm text-gray-600">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <button
                 type="button"
                 onClick={switchToRegister}

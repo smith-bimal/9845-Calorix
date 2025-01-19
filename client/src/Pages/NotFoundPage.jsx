@@ -1,5 +1,3 @@
-import React from "react";
-import Navbar from "../components/Navbar";
 import { Home } from "lucide-react";
 import { useNavigate } from "react-router";
 
@@ -28,7 +26,7 @@ const NotFoundPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center min-h-[80vh]">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center min-h-[80vh] relative">
         {/* Animated 404 Text */}
         <div className="relative">
           <h1 className="text-[200px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#cf936e] to-[#674740] animate-pulse">
@@ -49,7 +47,7 @@ const NotFoundPage = () => {
 
         {/* Description */}
         <p className="mt-4 text-lg text-gray-600 text-center max-w-md">
-          The page you're looking for has vanished into thin air! Don't worry,
+          The page you&apos;re looking for has vanished into thin air! Don&apos;t worry,
           you can always go back home.
         </p>
 
@@ -58,7 +56,7 @@ const NotFoundPage = () => {
           onClick={homeHandle}
           className="mt-8 px-8 py-3 bg-gradient-to-r from-[#cf936e] to-[#674740] text-white rounded-full
                     flex items-center gap-2 transform hover:scale-105 transition-all
-                    shadow-lg hover:shadow-xl cursor-pointer"
+                    shadow-lg hover:shadow-xl cursor-pointer z-20"
         >
           <Home className="w-5 h-5" />
           Back to Home
