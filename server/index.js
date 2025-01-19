@@ -21,7 +21,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-    origin: "https://calorix.netlify.app",
+    origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
