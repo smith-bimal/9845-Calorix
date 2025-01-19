@@ -26,9 +26,9 @@ const LandingPage = () => {
   }, [inputData, dishes]);
 
   return (
-    <div className="p-6 sm:p-12 sm:h-screen">
+    <div className="p-6 sm:p-12 w-screen h-screen sm:h-screen">
       <div className="w-full h-full absolute top-0 left-0 overflow-hidden -z-10">
-        <img src="https://cdn.prod.website-files.com/642697fb54ecdf3d30edf7fa/657b46723505347178a9b5ae_fRvSND3a0MkyADqAXkKYVkJVeGDnLZyyCV-_xLjmZB_qgTLITRudapag25ALM92Zbfp7vIbyVBg_zZk_Vq_Q2HGFF9-fd_Bsg-uGwjrEx6A_vBk1o3jLA84LNyDzr38jQ0OEmjaIWfWvDEu45UhD-y0.jpeg" alt="bg_img" className="h-full w-full object-cover object-bottom" />
+        <img src="https://cdn.prod.website-files.com/642697fb54ecdf3d30edf7fa/657b46723505347178a9b5ae_fRvSND3a0MkyADqAXkKYVkJVeGDnLZyyCV-_xLjmZB_qgTLITRudapag25ALM92Zbfp7vIbyVBg_zZk_Vq_Q2HGFF9-fd_Bsg-uGwjrEx6A_vBk1o3jLA84LNyDzr38jQ0OEmjaIWfWvDEu45UhD-y0.jpeg" alt="bg_img" className="h-full w-full object-cover" />
         <div className="absolute w-full h-full bg-gradient-to-r from-white via-[#fffffff6] to-[#ffffffc7] top-0 left-0"></div>
       </div>
 
@@ -38,7 +38,7 @@ const LandingPage = () => {
             <div className="absolute right-8 top-1/2 -translate-y-1/2"><Search /></div>
             <input type="text"
               placeholder="Search for the dish or item"
-              className="rounded-full px-8 py-5 sm:min-w-[25rem] w-[500px] shadow-[0_4px_4px_0_#0000001f,_inset_1px_0_4px_rgba(0,0,0,0.11)] outline-none"
+              className="rounded-full px-8 py-5 sm:min-w-[25rem] sm:w-[500px] w-full shadow-[0_4px_4px_0_#0000001f,_inset_1px_0_4px_rgba(0,0,0,0.11)] outline-none"
               value={inputData}
               onChange={(e) => setInputData(e.target.value)}
             />
@@ -100,11 +100,11 @@ const LandingPage = () => {
           </div>
           <PrimaryBtn onclick={() => setIsScanning(!isScanning)}>{isScanning ? "Stop scanning" : "Scan to check"}</PrimaryBtn>
         </div>
-        <div className="w-1/2 md:text-right text-center">
-          <h1 className="leading-[4rem]">
-            <span className="font-semibold text-6xl">Scan a QR code,</span><br />
-            <span className="text-5xl">get detailed calorie breakdown, and adjust your meal with</span>
-            <span className="font-bold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#cf936e] to-[#674740]"> CALORIX.</span>
+        <div className="md:w-1/2 md:text-right text-center">
+          <h1 className="sm:leading-[4rem]">
+            <span className="font-semibold text-3xl sm:text-4xl md:text-6xl">Scan a QR code,</span><br />
+            <span className="text-2xl sm:text-3xl md:text-5xl">get detailed calorie breakdown, and adjust your meal with</span>
+            <span className="font-bold text-4xl sm:text-5xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#cf936e] to-[#674740]"> CALORIX.</span>
           </h1>
 
           <p className="text-sm text-neutral-500 leading-7 mt-4">Explore the nutritional breakdown of your favorite dishes, customize ingredient portions, and instantly track your calorie intake for a smarter, healthier lifestyle.</p>
