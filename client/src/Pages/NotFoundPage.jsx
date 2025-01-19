@@ -4,7 +4,6 @@ import { useNavigate } from "react-router";
 const NotFoundPage = () => {
   const navigate = useNavigate();
   function homeHandle() {
-    console.log("Navigating to Home");
     navigate("/");
   }
 

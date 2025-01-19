@@ -5,12 +5,14 @@ import { useParams } from 'react-router';
 import apiRequest from '../lib/apiRequest';
 import PrimaryBtn from '../components/PrimaryBtn';
 import TernaryBtn from '../components/TernaryBtn';
+import QRCode from '../components/QRcode';
 
 const ProductDetails = () => {
   const [dish, setDish] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
   const [quantities, setQuantities] = useState({});
+  const [showQR, setShowQR] = useState(false);
 
   useEffect(() => {
     apiRequest
@@ -69,6 +71,7 @@ const ProductDetails = () => {
 
   return (
     <div className="container mx-auto px-4 pt-8">
+      {showQR && <QRCode value={dish._id} setShowQR={setShowQR} />}
       <div className="flex items-start lg:flex-row gap-8 relative">
         {/* Left side - Text content */}
         <div className="flex-1">
@@ -90,7 +93,7 @@ const ProductDetails = () => {
 
           <div className="flex gap-4 mt-8">
             <PrimaryBtn onclick={handleSavePreference}>Save preference</PrimaryBtn>
-            <TernaryBtn>Generate QR</TernaryBtn>
+            <TernaryBtn onclick={()=>setShowQR(true)}>Generate QR</TernaryBtn>
           </div>
         </div>
 

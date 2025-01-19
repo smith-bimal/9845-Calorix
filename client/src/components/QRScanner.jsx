@@ -2,13 +2,19 @@
 import { useEffect, useState } from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import { useNavigate } from "react-router";
+import apiRequest from "../lib/apiRequest";
 
 function QRScanner() {
     const [data, setData] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
-        navigate(data);
+        if (data != "") {
+            apiRequest.get(`dishes/${data}`)
+                .then(res => {
+                    navigate(`dishes/${res.data._id}`);
+                })
+        }
     }, [data]);
 
     return (
